@@ -22,6 +22,12 @@ const GameBoard = () => {
                 // Update the board state with the new move
                 const newBoard = response.data.board;
                 setBoard(newBoard);
+                if (response.data.victory) {
+                    // Delay the alert to show the move first
+                    setTimeout(() => {
+                        alert(`Player ${turn} wins!`);
+                    }, 500); // Delay of 500 milliseconds (0.5 seconds)
+                }
                 setTurn(turn === 1 ? 2 : 1); // Switch turns
             } else {
                 alert(response.data.message); // Show invalid move message
