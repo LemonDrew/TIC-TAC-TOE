@@ -1,0 +1,29 @@
+.App {
+  text-align: center;
+}
+
+.game-board {
+  display: inline-block;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.player1 {
+  background-color: lightblue;
+}
+
+.player2 {
+  background-color: lightcoral;
+}
