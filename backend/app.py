@@ -28,5 +28,12 @@ def make_move():
     return jsonify({'success': False, 'message': 'Invalid move'})
 
 
+@app.route('/api/reset', methods=['POST'])  # New endpoint to reset the game
+def reset_game():
+    global board, turn
+    board = create_board()  # Reset the board
+    turn = 1  # Reset to Player 1
+    return jsonify({'success': True, 'board': board.tolist()})
+
 if __name__ == '__main__':
     app.run(debug=True) 
